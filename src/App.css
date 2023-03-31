@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#2C3531;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.board {
+  width: calc(64px * 8);
+  height: calc(64px * 8);
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cell {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.cell img{
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+.black{
+  background-color: deepskyblue;
+}
+
+.white {
+  background-color: rgb(211, 121, 88);
+}
+.selected {
+  background-color: brown;
+}
+
+.available {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: rgb(56, 245, 56);
+}
+
+.lost {
+  height: calc(50vh - 60px);
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #116466;
+}
+
+.lost h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.lost div {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.lost div img {
+  margin-left: 5px;
+}
+.timer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  background-color: #D9B08C;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-right:10px
 }
 
-.App-link {
-  color: #61dafb;
+.timer button.btnTimer {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #D1E8E2;
+  color: #116466;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.2s ease-in-out;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.timer button.btnTimer:hover {
+  background-color: #2C3531;
+  cursor: pointer;
+  color: #D1E8E2
+}
+
+.timer h2 {
+  margin: 10px 0;
+  font-weight: normal;
+  color: #333;
+}
+.currentPlayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  height: 80px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: #2C3531;
+  color: #D1E8E2
 }
